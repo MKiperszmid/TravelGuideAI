@@ -13,13 +13,15 @@ import com.mkiperszmid.travelguideai.home.presentation.components.HomeSearchBar
 fun HomeScreen(
     viewModel: HomeViewModel = hiltViewModel()
 ) {
+    val state = viewModel.state
+
     Column(modifier = Modifier.fillMaxSize()) {
         Text(text = "A donde viajas?")
         HomeSearchBar(
             onSearch = {},
             placeholder = "Pais, Ciudad",
-            inputText = "",
-            onValueChange = {},
+            inputText = state.searchText,
+            onValueChange = { viewModel.onSearchTextChange(it) },
             modifier = Modifier.fillMaxWidth()
         )
     }
