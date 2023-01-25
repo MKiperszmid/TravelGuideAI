@@ -11,7 +11,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.mkiperszmid.travelguideai.home.domain.model.HomeFilterSettings
 import com.mkiperszmid.travelguideai.home.presentation.HomeFilterDialogAction
-import com.mkiperszmid.travelguideai.ui.theme.DarkGreen
 
 @Composable
 fun HomeFilterDialog(
@@ -26,7 +25,6 @@ fun HomeFilterDialog(
             modifier = Modifier.fillMaxWidth().padding(16.dp)
                 .defaultMinSize(minHeight = 53.dp),
             colors = ButtonDefaults.buttonColors(
-                backgroundColor = DarkGreen,
                 contentColor = Color.White
             ),
             shape = RoundedCornerShape(50.dp),
