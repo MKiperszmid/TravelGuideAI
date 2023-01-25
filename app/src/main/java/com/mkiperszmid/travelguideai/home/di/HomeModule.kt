@@ -13,6 +13,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.create
+import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
@@ -24,7 +25,11 @@ object HomeModule {
         return Retrofit.Builder().baseUrl(ChatgptApi.BASE_URL)
             .addConverterFactory(MoshiConverterFactory.create())
             .client(
-                OkHttpClient.Builder().addInterceptor(HttpLoggingInterceptor())
+                OkHttpClient.Builder()
+                    .connectTimeout(20, TimeUnit.SECONDS)
+                    .readTimeout(20, TimeUnit.SECONDS)
+                    .writeTimeout(20, TimeUnit.SECONDS)
+                    .addInterceptor(HttpLoggingInterceptor())
                     .addInterceptor(ApiKeyInterceptor()).build()
             ).build()
             .create()

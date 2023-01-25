@@ -1,6 +1,8 @@
 package com.mkiperszmid.travelguideai.home.presentation
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -25,22 +27,36 @@ fun HomeScreen(
             })
     }
 
-    Column(modifier = Modifier.fillMaxSize()) {
-        Text(text = "A donde viajas?")
-        Row(
-            modifier = Modifier.fillMaxWidth().padding(16.dp),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            HomeSearchBar(
-                onSearch = {
-                    viewModel.search()
-                },
-                placeholder = "Pais, Ciudad",
-                inputText = state.searchText,
-                onValueChange = { viewModel.onSearchTextChange(it) }
-            )
-            HomeFilterButton(onClick = { viewModel.onFilterClick() })
+    BackHandler(state.chatReply != null) {
+        viewModel.onBackPress()
+    }
+
+    LazyColumn(modifier = Modifier.fillMaxSize()) {
+        item {
+            Text(text = "A donde viajas?")
+        }
+        item {
+            Row(
+                modifier = Modifier.fillMaxWidth().padding(16.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                HomeSearchBar(
+                    onSearch = {
+                        viewModel.search()
+                    },
+                    placeholder = "Pais, Ciudad",
+                    inputText = state.searchText,
+                    onValueChange = { viewModel.onSearchTextChange(it) }
+                )
+                HomeFilterButton(onClick = { viewModel.onFilterClick() })
+            }
+        }
+
+        item {
+            state.chatReply?.let {
+                Text(text = it)
+            }
         }
     }
 }
