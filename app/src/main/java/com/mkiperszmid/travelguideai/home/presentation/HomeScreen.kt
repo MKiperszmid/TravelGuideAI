@@ -128,6 +128,7 @@ fun HomeScreen(
                                     modifier = Modifier.align(Alignment.BottomStart).padding(12.dp)
                                 )
                             }
+
                         }
                     }
                 }
