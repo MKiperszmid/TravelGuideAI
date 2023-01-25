@@ -24,6 +24,7 @@ import com.mkiperszmid.travelguideai.home.presentation.components.HomeFilterButt
 import com.mkiperszmid.travelguideai.home.presentation.components.HomeFilterDialog
 import com.mkiperszmid.travelguideai.home.presentation.components.HomePopularFilter
 import com.mkiperszmid.travelguideai.home.presentation.components.HomeSearchBar
+import com.mkiperszmid.travelguideai.ui.theme.DarkGreen
 
 @Composable
 fun HomeScreen(
@@ -76,7 +77,7 @@ fun HomeScreen(
         if (state.isLoading) {
             item {
                 Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
-                    CircularProgressIndicator()
+                    CircularProgressIndicator(color = DarkGreen)
                 }
             }
         } else {
@@ -128,7 +129,6 @@ fun HomeScreen(
                                     modifier = Modifier.align(Alignment.BottomStart).padding(12.dp)
                                 )
                             }
-
                         }
                     }
                 }
