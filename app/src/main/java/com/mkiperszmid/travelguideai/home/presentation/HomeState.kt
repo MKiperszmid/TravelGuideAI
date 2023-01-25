@@ -12,5 +12,6 @@ data class HomeState(
     val chatReply: String? = null,
     val selectedRegion: Region = Region.TODAS,
     val popularPlaces: List<Place> = emptyList(),
-    val popularPlacesBackup: List<Place> = popularPlaces
+    val popularPlacesBackup: List<Place> = popularPlaces,
+    val isLoading: Boolean = false
 )
