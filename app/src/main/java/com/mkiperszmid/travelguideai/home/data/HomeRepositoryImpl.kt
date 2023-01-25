@@ -37,12 +37,12 @@ class HomeRepositoryImpl(
     override suspend fun getPopularPlaces(): Result<List<Place>> {
         return Result.success(
             listOf(
-                Place("USA", "New York", Region.AMERICA),
-                Place("Argentina", "Salta", Region.AMERICA),
-                Place("España", "Barcelona", Region.EUROPA),
-                Place("Australia", "Sydney", Region.OCEANIA),
-                Place("Japon", "Tokio", Region.ASIA),
-                Place("Italia", "Roma", Region.EUROPA)
+                Place("USA", "New York", Region.AMERICA, "https://www.airpano.com/files/video-new-york-2015/images/image1.jpg"),
+                Place("Argentina", "Salta", Region.AMERICA, "https://c1.wallpaperflare.com/preview/79/779/771/argentina-salta-hills-nature-arid.jpg"),
+                Place("España", "Barcelona", Region.EUROPA, "https://www.fodors.com/wp-content/uploads/2022/03/Hero-UPDATEBarcelona-iStock-1320014700-1.jpg"),
+                Place("Australia", "Sydney", Region.OCEANIA, "https://images.squarespace-cdn.com/content/v1/55ee34aae4b0bf70212ada4c/1577545161018-1F9Z9ZZQG9JO2O4WCWQX/keith-zhu-qaNcz43MeY8-unsplash+%281%29.jpg"),
+                Place("Japon", "Tokio", Region.ASIA, "https://lonelyplanetes.cdnstatics2.com/sites/default/files/styles/max_1300x1300/public/fotos/japon_tokio_shibuya_shutterstock_666197236_f11photo_shutterstock.jpg"),
+                Place("Italia", "Roma", Region.EUROPA, "https://www.thediaryofanomad.com/wp-content/w3-webp/uploads/2020/11/rome-for-3-days-in-rome-itinerary-vatican-dome-view.jpgw3.webp")
             )
         )
     }

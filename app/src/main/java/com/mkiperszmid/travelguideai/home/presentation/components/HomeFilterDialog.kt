@@ -2,17 +2,16 @@ package com.mkiperszmid.travelguideai.home.presentation.components
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.AlertDialog
-import androidx.compose.material.Button
-import androidx.compose.material.Divider
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.mkiperszmid.travelguideai.home.presentation.HomeFilterDialogAction
 import com.mkiperszmid.travelguideai.home.domain.model.HomeFilterSettings
+import com.mkiperszmid.travelguideai.home.presentation.HomeFilterDialogAction
+import com.mkiperszmid.travelguideai.ui.theme.DarkGreen
 
 @Composable
 fun HomeFilterDialog(
@@ -25,6 +24,13 @@ fun HomeFilterDialog(
         Button(
             onClick = { onAction(HomeFilterDialogAction.OnApplyClick) },
             modifier = Modifier.fillMaxWidth().padding(16.dp)
+                .defaultMinSize(minHeight = 53.dp),
+            colors = ButtonDefaults.buttonColors(
+                backgroundColor = DarkGreen,
+                contentColor = Color.White
+            ),
+            shape = RoundedCornerShape(50.dp),
+            contentPadding = PaddingValues(0.dp)
         ) {
             Text(text = "Aplicar")
         }
