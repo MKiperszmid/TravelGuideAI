@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.mkiperszmid.travelguideai.home.presentation.HomeFilterDialogAction
-import com.mkiperszmid.travelguideai.home.presentation.HomeFilterSettings
+import com.mkiperszmid.travelguideai.home.domain.HomeFilterSettings
 
 @Composable
 fun HomeFilterDialog(
