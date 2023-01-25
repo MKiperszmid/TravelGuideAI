@@ -1,4 +1,4 @@
-package com.mkiperszmid.travelguideai.home.domain
+package com.mkiperszmid.travelguideai.home.domain.model
 
 data class HomeFilterSettings(
     val people: Int = 1,
