@@ -10,6 +10,6 @@ data class Choice(
     val index: Int,
     @field:Json(name = "logprobs")
     val logprobs: Any,
-    @field:Json(name = "text")
-    val text: String
+    @field:Json(name = "message")
+    val message: Message
 )
